@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pothole Detection System</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #1f1f2e, #12121a);
+      color: #fff;
+      min-height: 100vh;
+      padding-top: 60px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    .card {
+      background-color: #2d2d44;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-primary {
+      background-color: #4a63f2;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #394edb;
+    }
+
+    #preview {
+      max-height: 250px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .result-box {
+      background-color: #1a1a2e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #e0e0e0;
+      font-family: monospace;
+    }
+
+    .title-gradient {
+      background: linear-gradient(90deg, #9b59b6, #3498db);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="title-gradient mb-4">🕳️ Pothole Detection System</h1>
+    <div class="card p-4">
+      <input type="file" id="imageUpload" class="form-control mb-3" accept="image/*" onchange="previewImage()" />
+      
+      <img id="preview" src="#" alt="Image Preview" class="img-fluid d-none" />
+
+      <div class="row mb-3">
+        <div class="col">
+          <input type="text" id="lat" class="form-control" placeholder="Latitude (optional)">
+        </div>
+        <div class="col">
+          <input type="text" id="lon" class="form-control" placeholder="Longitude (optional)">
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100" onclick="sendImage()">Upload & Analyze</button>
+
+      <div id="loading" class="text-light mt-3 d-none">⏳ Analyzing image...</div>
+      <div id="result" class="result-box d-none mt-3"></div>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{AIzaSyAJrUxN_k5oRYBDLKeCry6M64lTj4F9Ayo }}&callback=initMap">
+  </script>
+</body>
+</html>
