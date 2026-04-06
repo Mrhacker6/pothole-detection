@@ -101,10 +101,4 @@ http://127.0.0.1:7860
 
 ## 👨‍💻 Author
 Yash Singh
-"""
-
-path = "/mnt/data/README_PotholeAI.md"
-with open(path, "w") as f:
-    f.write(readme)
-
-path
+ML Engineer
