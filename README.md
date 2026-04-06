@@ -1,5 +1,4 @@
-# Create README.md content
-readme = """# 🚧 PotholeAI — Road Intelligence System
+🚧 SecureSenseAI — Road Intelligence System
 Multi-Modal Deep Learning System for **Pothole Detection** using **CNN + YOLO + Hybrid Fusion**
 
 ---
